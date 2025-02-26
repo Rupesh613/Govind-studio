@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Photography Website</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header class="header">
+        <div class="logo">Govind Studio & Event Creation</div>
+        <nav>
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#gallery">Gallery</a></li>
+                <li><a id="contactLink" href="javascript:void(0);" onclick="openContactModal()">Contact</a></li> <!-- Contact trigger -->
+                <li><a id="loginModalLink" href="javascript:void(0);"onclick="openloginModal()">Login</a></li> <!-- Login trigger -->
+
+                
+            </ul>
+        </nav>
+    </header>
+    
+    <section id="slider">
+        <div class="slider-container">
+            <div class="slide">
+                <img src="images/slid1.jpg" alt="Image 1">
+            </div>
+            <div class="slide">
+                <img src="images/slid2.jpg" alt="Image 2">
+            </div>
+            <div class="slide">
+                <img src="images/slid3.jpg" alt="Image 3">
+            </div>
+            <div class="slide">
+                <img src="images/slid4.jpg" alt="Image 4">
+            </div>
+            <div class="slide">
+                <img src="images/slid5.jpg" alt="Image 5">
+            </div>
+        </div>
+    
+        <!-- Navigation Buttons -->
+        <button class="prev" onclick="prevSlide()">&#10094;</button>
+        <button class="next" onclick="nextSlide()">&#10095;</button>
+    </section>
+
+    <section class="gallery">
+        <h2>Gallery</h2>
+        <div class="image-grid">
+            <img src="images/photo1.jpg" alt="Photo 1" onclick="showPopup(this.src)">
+            <img src="images/photo2.jpg" alt="Photo 2" onclick="showPopup(this.src)">
+            <img src="images/photo3.jpg" alt="Photo 3" onclick="showPopup(this.src)">
+            <img src="images/photo4.jpg" alt="Photo 4" onclick="showPopup(this.src)">
+        </div>
+
+        <div class="popup" id="imagePopup" onclick="closePopup()">
+            <img id="popupImage" src="" alt="Popup Image">
+        </div>
+    </section>
+    
+    <footer class="footer">
+        <p>© 2024 Govind Studio & Event Creation. All Rights Reserved.</p>
+    </footer>
+
+    <!-- Contact Modal -->
+    <div id="contactModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeContactModal()">&times;</span>
+            <h2>Contact Us</h2>
+            <form action="#" method="POST">
+                <div class="input-group">
+                    <input type="text" id="name" name="name" placeholder="Enter your name" required>
+                </div>
+                <div class="input-group">
+                    <input type="email" id="email" name="email" placeholder="Enter your email" required>
+                </div>
+                <div>
+                    <input type="tel" placeholder="Your Mobile Number" required>
+                </div>
+                <div class="input-group">
+                    <textarea id="message" name="message" placeholder="Write your message here" required></textarea>
+                </div>
+                <button type="submit" class="submit-btn">Submit</button>
+            </form>
+            <div class="social-links">
+                <a href="https://facebook.com" target="_blank">Facebook</a>
+                <a href="https://twitter.com" target="_blank">Twitter</a>
+                <a href="https://instagram.com" target="_blank">Instagram</a>
+                <a href="https://www.youtube.com/@Gsentertainment600" target="_blank">Youtube</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Login and Signup Modals -->
+    
+        <div id="loginModal" class="wrapper">
+            <span class="close" onclick="closeLoginModal()">&times;</span>
+
+    
+            <div class="form-container sign-up">
+                <form action="#">
+                    <h2>sign up</h2>
+                    <div class="form-group">
+                        <input type="text" required>
+                        <i class="fas fa-user"></i>
+                        <label for="">username</label>
+                    </div>
+                    <div class="form-group">
+                        <input type="email" required>
+                        <i class="fas fa-at"></i>
+                        <label for="">email</label>
+                    </div>
+                    <div class="form-group">
+                        <input type="password" required>
+                        <i class="fas fa-lock"></i>
+                        <label for="">password</label>
+                    </div>
+                    <div class="form-group">
+                        <input type="password" required>
+                        <i class="fas fa-lock"></i>
+                        <label for="">confirm password</label>
+                    </div>
+                    <button type="submit" class="btn">sign up</button>
+                    <div class="link">
+                        <p>You already have an account?<a href="#" class="signin-link"> Log in</a></p>
+                    </div>
+                </form>
+            </div>
+            <div class="form-container sign-in">
+                <form action="#">
+                    <h2>Log in</h2>
+                    <div class="form-group">
+                        <input type="text" required>
+                        <i class="fas fa-user"></i>
+                        <label for="">username</label>
+                    </div>
+                    <div class="form-group">
+                        <input type="password" required>
+                        <i class="fas fa-lock"></i>
+                        <label for="">password</label>
+                    </div>
+                    <div class="forgot-pass">
+                        <a href="#">forgot password?</a>
+                    </div>
+                    <button type="submit" class="btn">login</button>
+                    <div class="link">
+                        <p>Don't have an account?<a href="#" class="signup-link"> sign up</a></p>
+                    </div>
+                </form>
+            </div>
+        </div>
+        
+
+    <script src="script.js"></script>
+</body>
+</html>
